@@ -6,19 +6,19 @@ var browserSync = require('browser-sync');
 gulp.task('browserSync', function() {
     browserSync({
         server: {
-            baseDir: './'
+            baseDir: 'app'
         }
     })
 });
 
 gulp.task('sass', function () {
-    gulp.src('./scss/**/*.{scss,sass}')
+    gulp.src('app/scss/**/*.{scss,sass}')
         .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true
         }))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./css'))
+        .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({
            stream: true
     }));
@@ -27,9 +27,9 @@ gulp.task('sass', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('./scss/**/*.{scss,sass}', ['sass']);
-    gulp.watch('./*.html', browserSync.reload);
-    gulp.watch('./js/*.js', browserSync.reload);
+    gulp.watch('app/scss/**/*.{scss,sass}', ['sass']);
+    gulp.watch('app/*.html', browserSync.reload);
+    gulp.watch('app/js/*.js', browserSync.reload);
 
 });
 
