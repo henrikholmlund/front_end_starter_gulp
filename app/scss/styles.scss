@@ -1,8 +1,336 @@
-@import "../../bower_components/susy/sass/susy";
-@import "../../bower_components/breakpoint-sass/stylesheets/breakpoint";
+/*@import "../../bower_components/susy/sass/susy";
+@import "../../bower_components/breakpoint-sass/stylesheets/breakpoint"; */
+/********  Fonts *********/
 
 //testing for css-transpiling
- /* * {
+  /* * {
   outline: 1px solid red;
 } */
+
+//$susy: (
+  /* Tells Susy to use 12 columns */
+        //columns: 12,
+  /* Tells Susy that the container has a max-width of 1120px */
+        //container: 100%,
+  /* Tells Susy to use border-box */
+       // global-box-sizing: border-box
+//);
+
+/* Makes border-box properties */
+//@include border-box-sizing;
+
+//.wrap {
+  //@include container;
+//}
+
+@import "fonts.scss";
+/********  Colors *********/
+
+$primary-blue : rgba(63, 168, 244, 1);
+$light-blue: rgba(63, 168, 244, 0.6);
+$primary-green: rgba(100, 174, 86, 1);
+$dirty-yellow: #E8C50B;
+$primary-red: #ff0000;
+$dark-grey: #333333;
+$primary-grey: #808080;
+$light-grey: #eeeeee;
+
+/********  Mixins *********/
+
+@mixin clearfix() {
+  &:after {
+    display: table;
+    content: ' ';
+    clear: both;
+  }
+}
+
+/********  Main elements *********/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html,body {
+  margin: 0;
+  padding: 0;
+  //overflow: hidden;
+}
+
+h1 {
+  font-family: 'Sanspro-Regular', sans-serif;
+  color: white;
+}
+body {
+  background: $light-blue;
+  height: 100%;
+
+}
+
+nav {
+  background: $primary-blue;
+  color: white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  @include clearfix;
+  border: 0;
+  margin: 0;
+  width: 100%;
+}
+
+footer {
+  background: $dirty-yellow;
+  @include clearfix;
+  height: 200px;
+  font-family: 'Sanspro-Regular', sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+  }
+}
+
+header {
+  background-color: $primary-blue;
+  height: 70px;
+  margin: 0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+
+/********  Classes *********/
+
+
+.phone-container {
+  position: relative;
+
+}
+.swiper-container {
+  width: 100%;
+}
+
+.overlay {
+  display: none;
+}
+
+.store-icons {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.callout-text {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+
+.slide-pic {
+  max-width: 100%;
+}
+
+.frame-shadow {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  position: absolute;
+  top: 0;
+
+}
+
+.swiper-container {
+  position: absolute;
+  top: 0;
+}
+
+.frame {
+  max-width: 100%;
+
+}
+
+.z10 {
+  z-index: 10;
+}
+
+.z20 {
+  z-index: 20;
+}
+
+.z30 {
+  z-index: 30;
+}
+
+.z40 {
+  z-index: 40;
+}
+
+.z100 {
+  z-index: 100;
+}
+
+.z110 {
+  z-index: 110;
+}
+
+.z120 {
+  z-index: 120;
+}
+
+.call-to-action {
+  position: relative;
+  top: 900px;
+}
+
+.text-area {
+  padding-bottom: 50px;
+}
+
+
+
+/********  Media queries *********/
+
+@media (min-width: 30em) {
+  .call-to-action {
+    position: relative;
+    top: 1000px;
+  }
+}
+
+@media (min-width: 35em) {
+  .call-to-action {
+    position: relative;
+    top: 1125px;
+  }
+}
+
+@media (min-width: 40em) {
+  .call-to-action {
+    position: relative;
+    top: 1350px;
+  }
+}
+
+@media (min-width: 48em) {
+
+  .l-g3 {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+
+  }
+
+  .store-icons {
+    position: relative;
+    top: -200px;
+  }
+
+  .callout-text {
+    position: relative;
+    top: -200px;
+  }
+
+  .swiper-container {
+    width: 250px;
+    position: relative;
+    top: -365px;
+
+
+  }
+
+  .overlay {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    position: relative;
+    top: 178px;
+  }
+
+  .overlay {
+    display: flex;
+  }
+
+  .slide-pic {
+    max-width: 100%;
+
+  }
+
+  .frame-shadow {
+    position: absolute;
+    top: 5px;
+
+  }
+
+  .z10 {
+    z-index: 10;
+  }
+
+  .z20 {
+    z-index: 20;
+  }
+
+  .z30 {
+    z-index: 30;
+  }
+
+  .z40 {
+    z-index: 40;
+  }
+
+  .z100 {
+    z-index: 100;
+  }
+
+  .z110 {
+    z-index: 110;
+  }
+
+  .z120 {
+    z-index: 120;
+  }
+
+  .call-to-action {
+    position: relative;
+    top: 0;
+  }
+
+  .text-area {
+    padding-bottom: 0;
+    position: relative;
+    top: -50px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
