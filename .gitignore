@@ -39,3 +39,7 @@ jspm_packages
 
 #remove .idea for non IDE-specificity
 .idea
+
+#remove .DS_Store
+
+.DS_Store
